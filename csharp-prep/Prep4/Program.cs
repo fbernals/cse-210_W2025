@@ -38,7 +38,7 @@ class Program
         sortedNumbers = numbers.OrderBy(x => x).ToList();
         average = (float)sum / numbers.Count;
         Console.WriteLine($"The sum is {sum}");
-        Console.WriteLine($"The average is {average}");
+        Console.WriteLine($"The average is {average:0.00}");
         Console.WriteLine($"The largest number is {max}");
         Console.WriteLine($"The smallest positive number is {min}");
         Console.WriteLine("The numbers in ascending order are: ");
