@@ -16,18 +16,18 @@ public class QuoteResponse
 
 public class QuoteFetcher
 {
-    private const string ApiUrl = "https://api.api-ninjas.com/v1/quotes";
-    private const string ApiKey = "6wslCwq55lCkNTKIs+Tchg==hrIC2RF7XOecxVfL";
+    private const string _apiUrl = "https://api.api-ninjas.com/v1/quotes";
+    private const string _apiKey = "6wslCwq55lCkNTKIs+Tchg==hrIC2RF7XOecxVfL";
 
     public async Task<string> GetRandomQuoteAsync()
     {
         using (var client = new HttpClient())
         {
-            client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+            client.DefaultRequestHeaders.Add("X-Api-Key", _apiKey);
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync(ApiUrl);
+                HttpResponseMessage response = await client.GetAsync(_apiUrl);
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();

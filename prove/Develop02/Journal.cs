@@ -1,20 +1,20 @@
 class Journal
 {
-    public List<JournalEntry> Entries { get; private set; }
+    private List<JournalEntry> _entries;
 
     public Journal()
     {
-        Entries = new List<JournalEntry>();
+        _entries = new List<JournalEntry>();
     }
 
     public void AddEntry(JournalEntry entry)
     {
-        Entries.Add(entry);
+        _entries.Add(entry);
     }
 
     public void DisplayEntries()
     {
-        foreach (var entry in Entries)
+        foreach (var entry in _entries)
         {
             Console.WriteLine(entry.ToString());
         }
@@ -24,7 +24,7 @@ class Journal
     {
         using (StreamWriter writer = File.CreateText(fileName))
         {
-            foreach (var entry in Entries)
+            foreach (var entry in _entries)
             {
                 writer.WriteLine(entry.ToString());
             }
@@ -33,7 +33,7 @@ class Journal
 
     public void LoadFromFile(string fileName)
     {
-        Entries.Clear();
+        _entries.Clear();
 
         try
         {
@@ -60,7 +60,7 @@ class Journal
                             Prompt = prompt,
                             Response = response
                         };
-                        Entries.Add(entry);
+                        _entries.Add(entry);
                     }
                     catch (Exception ex)
                     {

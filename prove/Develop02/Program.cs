@@ -15,7 +15,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("Journal Menu:");
+            Console.WriteLine("\nJournal Menu:");
             Console.WriteLine("0. Get a random quote to help you reflect and get started.");
             Console.WriteLine("1. Write a new entry.");
             Console.WriteLine("2. Display the journal.");
@@ -25,6 +25,7 @@ class Program
 
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
+            Console.WriteLine();
 
             switch (choice)
             {
