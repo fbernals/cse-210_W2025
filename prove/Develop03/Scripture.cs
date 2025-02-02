@@ -33,7 +33,7 @@ public class Scripture
                 Console.Write(word.GetWord() + " ");
             }
         }
-        Console.WriteLine("\nPress Enter to hide more words or type 'quit' to exit.");
+        Console.WriteLine("\nPress Enter to hide more words, 'hint' to recover last hidden word or type 'quit' to exit.");
     }
 
     public void HideRandomWord()

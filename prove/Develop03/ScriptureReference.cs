@@ -9,11 +9,12 @@ public class ScriptureReference
     public ScriptureReference(string reference)
     {
         // Parse the reference format (e.g., "Proverbs 3:5-6")
-        var parts = reference.Split(':');
+        var parts = reference.Split(' ');
         _book = parts[0];
-        var verseParts = parts[1].Split('-');
-        _chapter = int.Parse(parts[1].Split('-')[0]);
-        _startVerse = int.Parse(parts[1].Split('-')[1]);
+        var chapterAndVerses = parts[1].Split(':');
+        _chapter = int.Parse(chapterAndVerses[0]);
+        var verseParts = chapterAndVerses[1].Split('-');
+        _startVerse = int.Parse(verseParts[0]);
         _endVerse = verseParts.Length > 1 ? int.Parse(verseParts[1]) : _startVerse;
     }
 
