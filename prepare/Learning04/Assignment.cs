@@ -10,4 +10,8 @@ class Assignment{
     public void GetSummary(){
         Console.WriteLine($"{_studentName} - {_topic}");
     }
+
+    public string GetStudentName(){
+        return _studentName;
+    }
 }

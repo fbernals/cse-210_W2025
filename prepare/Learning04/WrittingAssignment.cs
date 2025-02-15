@@ -7,6 +7,6 @@ class WrittingAssignment : Assignment{
 
     public void GetHomeworkList(){
         GetSummary();
-        Console.WriteLine($"{_title}");
+        Console.WriteLine($"{_title} by {GetStudentName()}");
     }
 }
