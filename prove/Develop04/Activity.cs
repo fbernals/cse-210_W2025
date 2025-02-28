@@ -8,8 +8,8 @@ class Activity
     Spinner spinner = new Spinner();
     public Activity(string name, string description)
     {
-        this._name = name;
-        this._description = description;
+        _name = name;
+        _description = description;
     }
 
     public void SetDuration(int seconds)

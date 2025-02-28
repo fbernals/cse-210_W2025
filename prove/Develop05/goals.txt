@@ -1,0 +1,4 @@
+0
+SimpleGoal,Run every morning,10,[ ] Run every morning
+EternalGoal,Read the scriptures,15,[∞] Read the scriptures
+ChecklistGoal,Buy eggs,5,[ ] Buy eggs (Completed 0/1 times)
