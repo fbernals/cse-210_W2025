@@ -10,6 +10,7 @@ class ListingActivity : Activity
         "Who are some of your personal heroes?"
     };
 
+    private List<string> userResponses = new List<string>();
     public ListingActivity() : base("Listing", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.")
     {
     }
@@ -32,13 +33,29 @@ class ListingActivity : Activity
             string input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
+                userResponses.Add(input);
                 itemsCount++;
             }
             
         }
-
-        Console.WriteLine($"You listed {itemsCount} items.");
+        SaveResponsesToFile();
+        Console.WriteLine($"You listed {itemsCount} items and you may check the file 'listing_responses.txt' for your responses.");
         stopwatch.Stop();
         EndActivity();
     }
+
+        private void SaveResponsesToFile()
+        {
+            string fileName = "listing_responses.txt";
+            using (StreamWriter writer = new StreamWriter(fileName, true))
+            {
+                foreach (string response in userResponses)
+                {
+                    writer.WriteLine(response);
+                }
+                writer.Flush();
+            }
+        }
+        
 }
+

@@ -3,15 +3,15 @@ using System.Diagnostics;
 class ReflectionActivity : Activity
 {
     private string[] _prompts = {
-        "Think of a time when you stood up for someone else.",
-        "Think of a time when you did something really difficult.",
-        "Think of a time when you helped someone in need.",
-        "Think of a time when you did something truly selfless."
+        "Think of a time when you stood up for someone else. ",
+        "Think of a time when you did something really difficult. ",
+        "Think of a time when you helped someone in need. ",
+        "Think of a time when you did something truly selfless. "
     };
 
     private string[] _questions = {
-        "\nWhy was this experience meaningful to you?",
-        "\nWhat have you learned from this?"
+        "\nWhy was this experience meaningful to you? ",
+        "\nWhat have you learned from this? "
         // Add more questions here
     };
 
@@ -27,16 +27,16 @@ class ReflectionActivity : Activity
         Spinner spinner = new Spinner();
         StartActivity();
         
-        Console.WriteLine("Let's reflect:");
+        Console.WriteLine("Let's reflect: ");
         Random random = new Random();
         stopwatch.Start();
         while (stopwatch.Elapsed.TotalSeconds < duration)
         {
             string prompt = _prompts[random.Next(_prompts.Length)];
             Console.WriteLine(prompt);
-            Console.WriteLine("When you have something in mind press any key to continue.");
+            Console.WriteLine("When you have something in mind press any key to continue. ");
             Console.ReadKey();
-            Console.WriteLine("Now, ponder each of the following questions as they relate to your experience.");
+            Console.WriteLine("Now, ponder each of the following questions as they relate to your experience. ");
             Console.Write("Begin in: ");
             countdown.StartCountdown(3);
             Console.WriteLine("");

@@ -23,8 +23,12 @@ class Spinner
                 Console.Write("|");
                 Thread.Sleep(100);
                 Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                Console.Write("\b \b");
             }
+            
         }
+
+        
     }
     public void GetSpinner(){
         Start();
