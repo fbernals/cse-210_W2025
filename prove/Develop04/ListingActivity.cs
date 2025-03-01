@@ -53,7 +53,7 @@ class ListingActivity : Activity
                 {
                     writer.WriteLine(response);
                 }
-                writer.Flush();
+                
             }
         }
         
