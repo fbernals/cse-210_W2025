@@ -3,10 +3,11 @@ using System.Diagnostics;
 class ReflectionActivity : Activity
 {
     private string[] _prompts = {
-        "Think of a time when you stood up for someone else. ",
-        "Think of a time when you did something really difficult. ",
-        "Think of a time when you helped someone in need. ",
-        "Think of a time when you did something truly selfless. "
+        "Think of a time when you stood up for someone else.\n",
+        "Think of a time when you did something really difficult.\n",
+        "Think of a time when you helped someone in need.\n",
+        "Think of a time when you did something truly selfless.\n",
+        "Think of a time when you were really brave.\n"
     };
 
     private string[] _questions = {
@@ -34,7 +35,7 @@ class ReflectionActivity : Activity
         {
             string prompt = _prompts[random.Next(_prompts.Length)];
             Console.WriteLine(prompt);
-            Console.WriteLine("When you have something in mind press any key to continue. ");
+            Console.WriteLine("When you have something in mind press any key to continue. \n");
             Console.ReadKey();
             Console.WriteLine("Now, ponder each of the following questions as they relate to your experience. ");
             Console.Write("Begin in: ");
@@ -43,7 +44,7 @@ class ReflectionActivity : Activity
 
             foreach (var question in _questions)
             {
-                Console.Write(question);
+                Console.Write($"{question}\n");
                 spinner.GetSpinner();
             }
             

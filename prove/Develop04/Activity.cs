@@ -3,7 +3,7 @@ class Activity
     private string _name;
     private string _description;
     protected int duration;
-    CountDown countdown = new CountDown();
+    //CountDown countdown = new CountDown();
 
     Spinner spinner = new Spinner();
     public Activity(string name, string description)
